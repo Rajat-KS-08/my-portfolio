@@ -1,11 +1,15 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import { TypeAnimation } from 'react-type-animation';
 import Image from "next/image";
-import devl from "../../assets/images/developer.gif";
+import devl from "../../assets/images/devGif.gif";
 import { motion } from "framer-motion";
+import Spinner from "./Spinner";
 
 const HeroSection = () => {
+
+  
+
   return (
     <section className="my-6">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -36,7 +40,7 @@ const HeroSection = () => {
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">With an insatiable curiosity for web development, I thrive on mastering new technologies and creating digital experiences that captivate and engage users.</p>
         </div>
         <div className="col-span-5 place-self-center mt-6 lg:mt-0">
-            <Image className="" src={devl} alt="Dev Image" full sizes="(max-width : 500px) 100vw, (max-width : 1200px) 30vw, 30vw" />
+            <Image src={devl} alt="Dev Image"  sizes="(max-width : 500px) 100vw, (max-width : 1200px) 30vw, 30vw" />
         </div>
       </div>
     </section>
