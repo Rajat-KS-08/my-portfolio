@@ -2,7 +2,7 @@
 import React from "react";
 import { TypeAnimation } from 'react-type-animation';
 import Image from "next/image";
-import imgGif from "../../assets/images/devGif.gif";
+import devl from "../../assets/images/developer.gif";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -36,7 +36,7 @@ const HeroSection = () => {
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">With an insatiable curiosity for web development, I thrive on mastering new technologies and creating digital experiences that captivate and engage users.</p>
         </div>
         <div className="col-span-5 place-self-center mt-6 lg:mt-0">
-            <Image src={imgGif} alt="Dev Image" height={300} width={300} />
+            <Image className="" src={devl} alt="Dev Image" full sizes="(max-width : 500px) 100vw, (max-width : 1200px) 30vw, 30vw" />
         </div>
       </div>
     </section>
