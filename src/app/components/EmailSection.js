@@ -17,7 +17,7 @@ const EmailSection = () => {
       <div className="z-10">
         <h5 className="text-3xl font-bold text-white my-2">Contact Me</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          If you've any message for me or just want to say hi, then just mail
+          If you have any message for me or just want to say hi, then just mail
           me. I will get back to you.
         </p>
         <br />

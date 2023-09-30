@@ -11,19 +11,19 @@ const HeroSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center">
           <motion.h1 initial={{x:-1000}} animate={{x:0}} className="text-[#99FF99] mb-4 font-bold text-3xl lg:text-6xl">
-            Hi, I'm Rajat Kumar Saha.
+            Hi, I am Rajat Kumar Saha.
           </motion.h1>
           <h1 className="text-[#36cfc9] mb-4 font-extrabold text-2xl lg:text-6xl">
             
             <TypeAnimation 
               sequence={[
-                "I'm",
+                "I am",
                 500,
-                "I'm a",
+                "I am a",
                 500,
-                "I'm a React.JS",
+                "I am a React.JS",
                 500,
-                "I'm a React.JS Developer.",
+                "I am a React.JS Developer.",
                 500,
                 "",
                 500

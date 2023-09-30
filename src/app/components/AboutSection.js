@@ -5,7 +5,7 @@ import Link from 'next/link';
 import TabButton from './TabButton';
 import profileImg from "../../assets/images/profilePic.png";
 
-const aboutMe = "Welcome to my personal portfolio website! I'm a passionate React.js Developer with a versatile skill set such as JavaScript, TypeScript, React.JS and many other libraries/tools of React. I'm passionate about staying up-to-date with the latest industry technologies and always strive to deliver high-quality code that meets the client's requirement.";
+const aboutMe = "Welcome to my personal portfolio website! I am a passionate React.js Developer with a versatile skill set such as JavaScript, TypeScript, React.JS and many other libraries/tools of React. I am passionate about staying up-to-date with the latest industry technologies and always strive to deliver high-quality code that meets the client's requirement.";
 const reduxCourseUrl = "https://www.udemy.com/certificate/UC-5af098ca-5a8a-450f-856b-b9888da801c9/";
 const reactArchUrl = "https://www.linkedin.com/learning/certificates/ccceeda53d94e8e9f4395856154bf5511fab732965f594a8d13c434075a0d94e";
 const TAB_DATA = [
