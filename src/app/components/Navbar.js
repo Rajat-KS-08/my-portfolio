@@ -65,7 +65,9 @@ const Navbar = () => {
             </ul>
         </div>
       </div>
-      {navbarOpen ? ( <MenuOverlay links={navLinks} /> ) : (null)}
+      {navbarOpen ? (
+        <MenuOverlay links={navLinks} onSelect={() => setNavbarOpen(false)} />
+      ) : (null)}
     </nav>
   )
 }
