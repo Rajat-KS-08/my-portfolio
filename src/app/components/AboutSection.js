@@ -164,13 +164,17 @@ const TAB_DATA = [
       <Card
         cardGIF={resumeGIF}
         content={
-          <ul className="list-disc pl-2">
+          <ul className="list-disc pl-2 flex justify-center">
             <a
               href="/documents/Rajat_Kumar_Saha_Resume.pdf"
               download="Rajat_Kumar_Saha_Resume.pdf"
-              className="inline-block mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-4 py-1.5 text-sm font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+              className="flex flex-row items-center justify-center gap-2 mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-6 py-2 text-base font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 mx-auto"
+              style={{ minWidth: '210px', maxWidth: '320px' }}
             >
-              Download Resume
+              <span className="text-center w-full">Download Resume</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+              </svg>
             </a>
           </ul>
         }
@@ -235,18 +239,23 @@ const AboutSection = () => {
             </TabButton>
           </div>
           {/* Mobile Dropdown */}
-          <div className="flex md:hidden flex-row justify-start mt-8">
-            <select
-              className="bg-[#121212] text-white rounded px-4 py-2 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={tab}
-              onChange={(e) => handleTabChange(e.target.value)}
-            >
-              <option value="skills">Skills</option>
-              <option value="education">Education</option>
-              <option value="experience">Experience</option>
-              <option value="certifications">Certifications</option>
-              <option value="resume">Resume</option>
-            </select>
+          <div className="flex md:hidden flex-row justify-center mt-8">
+            <div className="relative w-full max-w-xs">
+              <select
+                className="bg-[#181f1b] bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-6 py-3 pr-10 border-2 border-[#36cfc9] shadow-lg focus:outline-none focus:ring-2 focus:ring-[#36cfc9] focus:ring-offset-2 text-base font-semibold transition-all duration-200 hover:border-[#99FF99] hover:shadow-xl w-full appearance-none"
+                value={tab}
+                onChange={(e) => handleTabChange(e.target.value)}
+              >
+                <option value="skills">Skills</option>
+                <option value="education">Education</option>
+                <option value="experience">Experience</option>
+                <option value="certifications">Certifications</option>
+                <option value="resume">Resume</option>
+              </select>
+              <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-gray-400 text-lg">
+                ▼
+              </span>
+            </div>
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)?.content}
