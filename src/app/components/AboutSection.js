@@ -3,7 +3,13 @@ import React, { useTransition, useState, startTransition } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TabButton from './TabButton';
+import Card from './Card';
 import profileImg from "../../assets/images/profilePic.png";
+import skillsGIF from "../../assets/about_me_GIFs/skills.gif";
+import educationGIF from "../../assets/about_me_GIFs/education.gif";
+import experienceGIF from "../../assets/about_me_GIFs/experience.gif"; 
+import certificationsGIF from "../../assets/about_me_GIFs/certificate.gif";
+import resumeGIF from "../../assets/about_me_GIFs/resume.gif";
 
 const aboutMe = "Welcome to my personal portfolio website! I am a passionate React.js Developer with a versatile skill set such as JavaScript, TypeScript, React.JS and many other libraries/tools of React. I am passionate about staying up-to-date with the latest industry technologies and always strive to deliver high-quality code that meets the client's requirement.";
 const reduxCourseUrl = "https://www.udemy.com/certificate/UC-5af098ca-5a8a-450f-856b-b9888da801c9/";
@@ -13,54 +19,89 @@ const TAB_DATA = [
     title : "Skills",
     id : "skills",
     content : (
-      <ul className='list-disc pl-2'>
-        <li>Python</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>TypeScript(Basic)</li>
-        <li>React.js</li>
-        <li>Next.JS(Basic)</li>
-        <li>Axios</li>
-        <li>React Tools : react-router-dom, formik, React Testing Library, Material UI</li>
-        <li>State Management Library : Redux</li>
-        <li>Additional : Redux-Toolkit, Redux-Toolkit Query, BootStrap, jQuery, Framer-Motion</li>
-      </ul>
+      <Card cardGIF={skillsGIF} content={
+        <ul className='list-disc pl-2'>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Node.JS</li>
+          <li>Next.JS</li>
+          <li>Unit Testing : JEST, React Testing Library</li>
+          <li>State Management Library : Redux, Redux-Toolkit, Redux-Toolkit Query</li>
+          <li>Additional : Microfrontend, jQuery, Framer-Motion</li>
+        </ul>
+      } />
     )
   },
   {
     title : "Education",
     id : "education",
     content : (
-      <ul className='list-disc pl-2'>
-        <li>Passed Bachelor of Computer Applications from Lalit Chandra Bharali College under Gauhati University on 2021.</li>
-      </ul>
+      <Card cardGIF={educationGIF} content={
+        <ul className='list-disc pl-2'>
+          <li>Passed Bachelor of Computer Applications from Lalit Chandra Bharali College under Gauhati University on 2021.</li>
+        </ul>
+      } />
     )
   },
   {
     title : "Experience",
     id : "experience",
     content : (
-      <ul className='list-disc pl-2'>
-        <li>React.JS Developer at Wipro Technologies <span className='text-green'>(16th Aug, 2021 - present)</span></li>
-      </ul>
+      <Card cardGIF={experienceGIF} content={
+        <ul className='list-disc pl-2'>
+          <li>Software Engineer at Avirasoft Digital Technologies <span className='text-green'>(21st Mar, 2024 - present)</span></li>
+          <li>Frontend Developer at Wipro Technologies <span className='text-green'>(16th Aug, 2021 - 4th Mar, 2024)</span></li>
+        </ul>
+      } />
     )
   },
   {
     title : "Certifications",
     id : "certifications",
     content : (
-      <ul className='list-disc pl-2'>
-        <li>Advanced Redux and Redux Toolkit Course from Udemy.<Link href={reduxCourseUrl}><button className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Click to check the Certificate</button></Link></li>
-        <li>React : Software Architecture Course from LinkedIn.<Link href={reactArchUrl}><button className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Click to check the Certificate</button></Link></li>
-      </ul>
+      <Card cardGIF={certificationsGIF} content={
+        <ul className='list-disc pl-2'>
+          <li>Advanced Redux and Redux Toolkit Course from Udemy.
+            <Link href={reduxCourseUrl}>
+              <button
+                className="inline-block mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-4 py-1.5 text-sm font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+              >
+                Check Certificate
+              </button>
+            </Link>
+          </li>
+          <li>React : Software Architecture Course from LinkedIn.
+            <Link href={reactArchUrl}>
+              <button
+                className="inline-block mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-4 py-1.5 text-sm font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+              >
+                Check Certificate
+              </button>
+            </Link>
+          </li>
+        </ul>
+      } />
+    )
+  },
+  {
+    title : "Resume",
+    id : "resume",
+    content : (
+      <Card cardGIF={resumeGIF} content={
+        <ul className='list-disc pl-2'>
+          <p>My Resume</p>
+        </ul>
+      } />
     )
   }
 ]
 
 const AboutSection = () => {
 
-  const [tab, setTab] = useState("Skills");
+  const [tab, setTab] = useState("skills");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -78,23 +119,37 @@ const AboutSection = () => {
             About Me
           </h1>
           <p className="text-base lg:text-lg">{aboutMe}</p>
-          <div className="flex flex-row justify-start mt-8">
-            <TabButton selectTab={() => handleTabChange("skills")} active={tab === 'skills'} >
-              {" "}
-              Skills{" "}
+          {/* Desktop Tab Buttons */}
+          <div className="hidden md:flex flex-row justify-start mt-8">
+            <TabButton selectTab={() => handleTabChange("skills")} active={tab === 'skills'}>
+              {" "}Skills{" "}
             </TabButton>
-            <TabButton active={tab === 'education'} selectTab={() => handleTabChange("education")}>
-              {" "}
-              Education{" "}
+            <TabButton active={tab === 'education'} selectTab={() => handleTabChange("education")}> 
+              {" "}Education{" "}
             </TabButton>
-            <TabButton active={tab === 'experience'} selectTab={() => handleTabChange("experience")}>
-              {" "}
-              Experience{" "}
+            <TabButton active={tab === 'experience'} selectTab={() => handleTabChange("experience")}> 
+              {" "}Experience{" "}
             </TabButton>
-            <TabButton active={tab === 'certifications'} selectTab={() => handleTabChange("certifications")}>
-              {" "}
-              Certifications{" "}
+            <TabButton active={tab === 'certifications'} selectTab={() => handleTabChange("certifications")}> 
+              {" "}Certifications{" "}
             </TabButton>
+            <TabButton active={tab === 'resume'} selectTab={() => handleTabChange("resume")}> 
+              {" "}Resume{" "}
+            </TabButton>
+          </div>
+          {/* Mobile Dropdown */}
+          <div className="flex md:hidden flex-row justify-start mt-8">
+            <select
+              className="bg-[#121212] text-white rounded px-4 py-2 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={tab}
+              onChange={e => handleTabChange(e.target.value)}
+            >
+              <option value="skills">Skills</option>
+              <option value="education">Education</option>
+              <option value="experience">Experience</option>
+              <option value="certifications">Certifications</option>
+              <option value="resume">Resume</option>
+            </select>
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab)?.content}
