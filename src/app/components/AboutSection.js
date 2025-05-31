@@ -136,21 +136,31 @@ const TAB_DATA = [
         cardGIF={certificationsGIF}
         content={
           <ul className="list-disc pl-2">
-            <li>
+            <li className="mb-4">
               Advanced Redux and Redux Toolkit Course from Udemy.
-              <Link href={reduxCourseUrl}>
-                <button className="inline-block mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-4 py-1.5 text-sm font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                  Check Certificate
-                </button>
-              </Link>
+              <div className="flex justify-center mt-2">
+                <Link href={reduxCourseUrl}>
+                  <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#23272f] to-[#181f1b] text-white rounded-full px-4 py-1.5 text-sm font-semibold shadow border-2 border-[#23272f] focus:outline-none focus:ring-2 focus:ring-[#23272f] focus:ring-offset-2">
+                    <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={2} stroke='currentColor' className='w-4 h-4'>
+                      <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
+                    </svg>
+                    Check Certificate
+                  </button>
+                </Link>
+              </div>
             </li>
-            <li>
+            <li className="mb-4">
               React : Software Architecture Course from LinkedIn.
-              <Link href={reactArchUrl}>
-                <button className="inline-block mt-2 bg-gradient-to-r from-[#23272f] to-[#121212] text-white rounded-full px-4 py-1.5 text-sm font-medium shadow hover:from-[#23272f] hover:to-[#121212] hover:scale-105 transition-all duration-200 border border-[#23272f] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-                  Check Certificate
-                </button>
-              </Link>
+              <div className="flex justify-center mt-2">
+                <Link href={reactArchUrl}>
+                  <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#23272f] to-[#181f1b] text-white rounded-full px-4 py-1.5 text-sm font-semibold shadow border-2 border-[#23272f] focus:outline-none focus:ring-2 focus:ring-[#23272f] focus:ring-offset-2">
+                    <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={2} stroke='currentColor' className='w-4 h-4'>
+                      <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
+                    </svg>
+                    Check Certificate
+                  </button>
+                </Link>
+              </div>
             </li>
           </ul>
         }
